@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name    = "plain_http"
-  s.version = "0.1"
+  s.version = "0.2"
   s.date    = Date.today.to_s
   
   s.summary     = "An easy to remember interface to Net::HTTP"
