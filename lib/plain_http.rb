@@ -26,8 +26,7 @@ class PlainHTTP
     method_class_name = method.to_s.downcase.sub(/^[a-z]/i) {|m| m.upcase}
     req_class = Net::HTTP.const_get(method_class_name)
     uri = URI.parse(url)
-    path = uri.path == '' ? '/' : uri.path
-    req = req_class.new(path, headers)
+    req = req_class.new(uri.request_uri, headers)
     if data.respond_to?(:to_hash)
       req.set_form_data(data.to_hash)
     elsif data.to_s != ''
